@@ -1,13 +1,40 @@
 [project]
 name = "contract"
-description = ""
-authors = []
+description = "FlexLease - Decentralized Equipment/Vehicle Rental Protocol on Stacks Blockchain"
+authors = ["FlexLease Team"]
 telemetry = true
 cache_dir = "./.cache"
+clarity_version = "4"
 
-# [contracts.counter]
-# path = "contracts/counter.clar"
-# epoch = "latest"
+;; Asset Registry Contract - Central registry for all tokenized assets
+[contracts.asset-registry]
+path = "contracts/asset-registry.clar"
+epoch = "4"
+
+;; Fractional Ownership Contract - Manages asset fractionalization and governance
+[contracts.fractional-ownership]
+path = "contracts/fractional-ownership.clar"
+epoch = "4"
+
+;; Rental Marketplace Contract - Core rental functionality and escrow
+[contracts.rental-marketplace]
+path = "contracts/rental-marketplace.clar"
+epoch = "4"
+
+;; Revenue Distribution Contract - Automatic revenue payouts to token holders
+[contracts.revenue-distribution]
+path = "contracts/revenue-distribution.clar"
+epoch = "4"
+
+;; Reputation Contract - Trust and rating system
+[contracts.reputation]
+path = "contracts/reputation.clar"
+epoch = "4"
+
+;; Insurance Pool Contract - Insurance premiums and claims management
+[contracts.insurance-pool]
+path = "contracts/insurance-pool.clar"
+epoch = "4"
 
 [repl.analysis]
 passes = ["check_checker"]
