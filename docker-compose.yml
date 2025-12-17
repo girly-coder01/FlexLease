@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  chainhook:
+    image: hirosystems/chainhook:latest
+    container_name: flexlease-chainhook
+    ports:
+      - "20456:20456"
+    volumes:
+      - ./chainhooks:/predicates
+      - chainhook-data:/data
+    environment:
+      - STACKS_NETWORK=testnet
+      - STACKS_API_URL=https://api.testnet.hiro.so
+      - PREDICATES_PATH=/predicates
+    command: >
+      chainhook service start
+      --predicate-path=/predicates
+      --network=testnet
+    restart: unless-stopped
+    networks:
+      - flexlease-network
+
+  backend:
+    build: ./backend
+    container_name: flexlease-backend
+    ports:
+      - "3001:3001"
+      - "3002:3002"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - WS_PORT=3002
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - chainhook
+    restart: unless-stopped
+    networks:
+      - flexlease-network
+
+volumes:
+  chainhook-data:
+
+networks:
+  flexlease-network:
+    driver: bridge
