@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "@stacks/connect": "^7.9.0",
+    "@stacks/transactions": "^6.12.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

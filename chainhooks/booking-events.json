@@ -1,0 +1,34 @@
+{
+  "chain": "stacks",
+  "uuid": "flexlease-booking-events-v1",
+  "name": "FlexLease Booking Events",
+  "version": 1,
+  "networks": {
+    "testnet": {
+      "if_this": {
+        "scope": "contract_call",
+        "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.rental-marketplace",
+        "method": "create-booking"
+      },
+      "then_that": {
+        "http_post": {
+          "url": "http://localhost:3001/webhooks/booking-created",
+          "authorization_header": "Bearer YOUR_SECRET_TOKEN"
+        }
+      }
+    },
+    "mainnet": {
+      "if_this": {
+        "scope": "contract_call",
+        "contract_identifier": "SP000000000000000000002Q6VF78.rental-marketplace",
+        "method": "create-booking"
+      },
+      "then_that": {
+        "http_post": {
+          "url": "https://your-domain.com/webhooks/booking-created",
+          "authorization_header": "Bearer YOUR_SECRET_TOKEN"
+        }
+      }
+    }
+  }
+}

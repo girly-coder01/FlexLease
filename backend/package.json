@@ -1,0 +1,31 @@
+{
+  "name": "flexlease-backend",
+  "version": "1.0.0",
+  "description": "FlexLease backend server for handling Chainhook webhooks and real-time events",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest"
+  },
+  "keywords": ["stacks", "chainhooks", "blockchain", "rental"],
+  "author": "FlexLease Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ws": "^8.14.2",
+    "node-fetch": "^3.3.2",
+    "@stacks/blockchain-api-client": "^7.2.0",
+    "@stacks/transactions": "^6.12.0",
+    "body-parser": "^1.20.2",
+    "helmet": "^7.1.0",
+    "compression": "^1.7.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "jest": "^29.7.0"
+  }
+}

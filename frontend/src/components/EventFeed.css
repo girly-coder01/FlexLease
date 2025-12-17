@@ -1,0 +1,144 @@
+.event-feed {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.event-feed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.event-feed-header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.connection-status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.connection-status.connected {
+  background: #d4edda;
+  color: #155724;
+}
+
+.connection-status.disconnected {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.events-list {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.no-events {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
+.no-events p {
+  margin: 10px 0;
+}
+
+.no-events .hint {
+  font-size: 14px;
+  color: #999;
+}
+
+.event-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+  transition: all 0.3s ease;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.event-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.event-icon {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.event-content {
+  flex: 1;
+}
+
+.event-type {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 4px;
+  text-transform: capitalize;
+}
+
+.event-timestamp {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.event-details {
+  margin-top: 8px;
+}
+
+.event-details pre {
+  background: white;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  overflow-x: auto;
+  margin: 0;
+  border: 1px solid #e0e0e0;
+}
+
+/* Custom scrollbar */
+.events-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.events-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.events-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.events-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
